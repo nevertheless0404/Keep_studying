@@ -16,6 +16,8 @@ for a in range(n-7):
         w_index=0 #흰색으로 시작
         b_index=0 #검은색으로 시작
         # 시작지점
+        # 해당 값이 w or b 이면 서로 다르게 
+        # 칠해야 하므로 1을 증가 
         for i in range(a,a+8):
             for j in range(b,b+8):
                 if (i+j)%2==0:
