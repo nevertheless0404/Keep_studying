@@ -4,7 +4,9 @@ def solution(survey, choices):
     answer = ''
     check = {"R":0, "T":0, "C":0, "F":0, "J":0, "M":0, "A":0, "N":0, }
     for i in range(len(choices)):
+        # 1~3 일때
         l = survey[i][0]
+        # 5~7 일때
         r = survey[i][1]
         if choices[i] == 4:
             continue
