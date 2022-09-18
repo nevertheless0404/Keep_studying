@@ -22,5 +22,5 @@ for i in s:
         cnt += i//c
         if i % c != 0:
             cnt += 1
-        result += cnt
+    result += cnt
 print(result)
