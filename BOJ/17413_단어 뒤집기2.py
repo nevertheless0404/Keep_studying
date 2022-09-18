@@ -9,7 +9,7 @@ s.append(' ')
 s_word = []
 tag = False
 for i in s :
-    # '<'이나 공백 문자를 인식하면 스택에 있는 모든 문자를 스택 탑부터 출력
+    # '<'이나 공백 문자를 인식하면 있는 모든 문자를 탑부터 출력
     if i == '<':
         while s_word:
             print(s_word.pop(), end='')
