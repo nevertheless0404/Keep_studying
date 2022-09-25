@@ -11,7 +11,7 @@ for _ in range(n):
     num = int(input())
     nums.append(num)
     if num not in num_dict:
-        num_dict[num] = 1
+        num_dict[num] = 0
     else:
         num_dict[num] += 1
 
