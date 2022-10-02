@@ -14,10 +14,11 @@ for i in range(len(word)):
         stack.append(word[i])
 
     else:
+        # ')'가 나고 이전 문가 '(' 이었다면
+        # 레이저가 쏜다!
+        # 현재  쌓인 '(' 개수 (쇠막대기 개수)만큼 개수를 더해준다.
         if word[i - 1] == "(":
             stack.pop()
-            # 들어가 있는 가로의 길이를 구해주고
-            # 그 만큼 더해준당!
             ans += len(stack)
         else:
             # 그것이 아니면!
