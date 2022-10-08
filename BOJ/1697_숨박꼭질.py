@@ -20,8 +20,10 @@ def bfs():
         if x == k:
             print(graph[x])
             break
-
+        
+        # 이동할 수 있는 방향 
         for i in (x - 1, x + 1, 2 * x):
+            
             if 0 <= i <= 100000 and not graph[i]:
                 graph[i] = graph[x] + 1
                 queue.append(i)
