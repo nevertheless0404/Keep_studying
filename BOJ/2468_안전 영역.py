@@ -25,7 +25,7 @@ def bfs(x, y):
 
 
 for i in range(101):
-    visit = [[0] * n for i in range(n)]
+    visit = [[0] * n for _ in range(n)]
     cnt = 0
     for j in range(n):
         for k in range(n):

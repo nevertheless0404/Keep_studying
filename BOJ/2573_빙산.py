@@ -21,7 +21,7 @@ def bfs(a, b):
             ny = y + dy[i]
 
             if 0 <= nx < n and 0 <= ny < m:
-                if maps[nx][ny] and not visit[nx][ny]:
+                if maps[nx][ny] and not visit[nx][ny] == 0:
                     visit[nx][ny] = True
                     queue.append((nx, ny))
                 elif not maps[nx][ny]:
