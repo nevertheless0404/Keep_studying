@@ -33,6 +33,7 @@ dong_dist = dist_list[-1]
 
 result = 0
 for i in range(num):
+    # 0에서 떨어진 각 가게의 거리와, 0에서 떨어진 동근의 위치 차이의 절댓값을 구한다.
     distance = abs(dist_list[i] - dong_dist)
 
     # 전체 길이를 구해준다.
