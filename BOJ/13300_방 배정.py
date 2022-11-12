@@ -13,6 +13,7 @@ for _ in range(n):
 
 room = 0
 
+
 for i in info:
     for j in i:
         room += math.ceil(j / k)
