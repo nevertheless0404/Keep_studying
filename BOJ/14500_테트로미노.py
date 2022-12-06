@@ -37,7 +37,7 @@ def middle(x, y):
     global ans
     sum = arr[x][y]
 
-    ## x, y가 모서리면 ㅗ 모양은 아예 불가능
+    # x, y가 모서리면 ㅗ 모양은 아예 불가능
     if x == 0:
         if y == 0 or y == m - 1:
             return
