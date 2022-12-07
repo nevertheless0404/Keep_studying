@@ -25,7 +25,7 @@ def bfs(x, y):
 
 while True:
     w, h = map(int, input().split())
-    # 바다면 나와!!!!
+    # 바다면 나와줘!!
     if w == 0 and h == 0:
         break
     land = []
