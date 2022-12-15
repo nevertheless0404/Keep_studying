@@ -46,18 +46,18 @@ def middle(x, y):
             return
 
     case = []
-    # ㅜ
+    # 모양 ㅜ
     if 0 <= x + 1 < n and 1 <= y < m - 1:
         case.append(sum + arr[x + 1][y] + arr[x][y - 1] + arr[x][y + 1])
 
-    # ㅗ
+    # 모양 ㅗ
     if 1 <= x < n and 1 <= y < m - 1:
         case.append(sum + arr[x - 1][y] + arr[x][y - 1] + arr[x][y + 1])
 
-    # ㅏ
+    # 모양 ㅏ
     if 1 <= x < n - 1 and 0 <= y < m - 1:
         case.append(sum + arr[x - 1][y] + arr[x + 1][y] + arr[x][y + 1])
-    # ㅓ
+    # 모양 ㅓ
     if 1 <= x < n - 1 and 1 <= y < m:
         case.append(sum + arr[x - 1][y] + arr[x + 1][y] + arr[x][y - 1])
 
