@@ -17,7 +17,7 @@ def virus(x, y):
         nx = x + dx[i]
         ny = y + dy[i]
 
-        # 나가지 않게 하기!
+        # 나가면 안돼!
         if 0 <= nx < n and 0 <= ny < m and visit[nx][ny] == 0:
             visit[nx][ny] = 2
             virus(nx, ny)
