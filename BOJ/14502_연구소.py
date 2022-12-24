@@ -21,3 +21,42 @@ def virus(x, y):
         if 0 <= nx < n and 0 <= ny < m and visit[nx][ny] == 0:
             visit[nx][ny] = 2
             virus(nx, ny)
+
+
+# 안전영역 개수 구하기
+def Cnt():
+    count = 0
+    for i in range(n):
+        for j in range(m):
+            if visit[i][j] == 0:
+                count += 1
+    return count
+
+
+def make_wall(cnt):
+    global result
+    if cnt == 3:
+        for i in range(n):
+            for j in range(m):
+                visit[i][j] = graph[i][j]
+
+        for i in range(n):
+            for j in range(m):
+                if visit[i][j] == 2:
+                    virus(i, j)
+        result = max(result, Cnt())
+        return
+    else:
+        for i in range(n):
+            for j in range(m):
+                if graph[i][j] == 0:
+                    graph[i][j] = 1
+                    cnt += 1
+                    make_wall(cnt)
+                    graph[i][j] = 0
+                    cnt -= 1
+
+
+result = 0
+make_wall(0)
+print(result)
