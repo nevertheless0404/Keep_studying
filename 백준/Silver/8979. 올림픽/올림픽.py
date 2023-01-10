@@ -9,7 +9,7 @@ for i in range(n):
     m = list(map(int, input().split()))
     medal.append(m)
 
-medal.sort(key=lambda x: (x[1], x[2], x[3]))
+medal.sort(key=lambda x: (-x[1], -x[2], -x[3]))
 
 for i in range(n):
     # 등수를 알고 싶은 국가 넣기
