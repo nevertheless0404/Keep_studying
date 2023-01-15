@@ -4,7 +4,8 @@ input = sys.stdin.readline
 
 n = int(input())
 scv = list(map(int, input().split()))
-# 3r개 미만이 들어왔을 때 개수 맞추기
+# 3개 미만이 들어왔을 때 개수 맞추기
+# 모든 아이템을 리스트에 추가추가!
 scv.extend([0, 0])
 
 dp = [[[0] * 61 for _ in range(61)] for _ in range(61)]
