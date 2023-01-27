@@ -4,27 +4,34 @@ import sys
 from collections import deque
 
 input = sys.stdin.readline
-beer = int(input().rstrip())
-
-for _ in range(beer):
-    n = int(input().rstrip())
-    nx, ny = map(int, input().split())
-    store = [list(map(int, input().split())) for _ in range(n)]
-    mx, my = map(int, input().split())
-    visit = [0 for _ in range(n + 1)]
 
 
-def bfs(x, y):
+def bfs():
     q = deque()
-    q.append((x, y))
+    q.append((home_x, home_y))
     while q:
-        x, y = q.appendleft()
-        if abs(x - nx) + abs(y - ny) <= 1000:
+        x, y = q.popleft()
+        if abs(x - fest_x) + abs(y - fest_y) <= 1000:
             print("happy")
             return
-        for i in range(n):
-            if not visit[i]:
-                sx, sy = store[i]
-                if abs(x - sx) + abs(y + sy) <= 1000:
-                    q.append((sx, sy))
-                    visit[i] = 1
+        for i in range(n):  # 편의점들 확인
+            if not visit[i]:  # 편의점을 방문하지 않았다면
+                new_x, new_y = graph[i]  # 편의점의 좌표를 새로 뽑고
+                if abs(x - new_x) + abs(y - new_y) <= 1000:  # 다음거리까지 갈 수 있다면
+                    visit[i] = 1  # 방문체크
+                    q.append((new_x, new_y))
+    print("sad")
+    return
+
+
+t = int(input())
+for _ in range(t):
+    n = int(input())
+    home_x, home_y = map(int, input().split())
+    graph = []
+    for _ in range(n):
+        x, y = map(int, input().split())
+        graph.append((x, y))
+    fest_x, fest_y = map(int, input().split())
+    visit = [0 for _ in range(n + 1)]
+    bfs()
