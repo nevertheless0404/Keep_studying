@@ -17,6 +17,7 @@ def bfs():
         a, b, w = q.popleft()
         if a == n - 1 and b == m - 1:
             return visit[a][b][w]
+        
         for i in range(4):
             x = a + dx[i]
             y = b + dy[i]
@@ -24,6 +25,7 @@ def bfs():
                 if graph[x][y] == 1 and w == 1:
                     visit[x][y][0] = visit[a][b][1] + 1
                     q.append([x, y, 0])
+                
                 elif graph[x][y] == 0 and visit[x][y][w] == 0:
                     visit[x][y][w] = visit[a][b][w] + 1
                     q.append([x, y, w])
