@@ -1,5 +1,9 @@
 # https://www.acmicpc.net/problem/15663
 
+import sys
+
+input = sys.stdin.readline
+
 n, m = map(int, input().split())
 tmp = list(map(int, input().split()))
 tmp.sort()
